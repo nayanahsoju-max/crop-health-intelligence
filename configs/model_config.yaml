@@ -1,0 +1,21 @@
+model:
+  architecture: efficientnet_b0
+  pretrained: true
+  image_size: 224
+  color_mode: RGB
+  seed: 42
+  validation_fraction: 0.15
+  test_fraction: 0.15
+  batch_size: 32
+  epochs: 30
+  early_stopping_patience: 5
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  class_weighting: true
+  checkpoint_metric: validation_macro_f1
+  plantdoc_is_training_data: false
+
+paths:
+  dataset_config: configs/dataset_config.yaml
+  model_output: models/classifier
+  report_output: reports/classification

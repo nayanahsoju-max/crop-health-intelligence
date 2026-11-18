@@ -1,0 +1,38 @@
+# Grape-specific dataset configuration for the AI-Powered Crop Health Intelligence System.
+# This file is SEPARATE from dataset_config.yaml (Tomato-Potato 7-class).
+# Do NOT modify dataset_config.yaml when training the Grape classifier.
+#
+# Physical image counts in data/PlantVillage-Grape/ (verified 2026-11-17):
+#   Grape___Black_rot                       : 1180
+#   Grape___Esca_(Black_Measles)            : 1383
+#   Grape___Leaf_blight_(Isariopsis_Leaf_Spot) : 1076
+#
+# 20 images excluded from training/validation/test via split manifest (not by count):
+#   grape_black_rot group 233      : 4 images
+#   grape_isariopsis_leaf_blight groups 82, 83, 48, 241 : 16 images
+# plantvillage_count must match the physical folder count so the loader verifies the
+# dataset is intact. Exclusion is handled downstream by load_grouped_manifest().
+
+version: 1
+
+datasets:
+  plantvillage:
+    path: data/PlantVillage-Grape
+    class_root: data/PlantVillage-Grape
+
+class_selection:
+  classes:
+    - id: grape_black_rot
+      crop: Grape
+      plantvillage_label: Grape___Black_rot
+      plantvillage_count: 1180
+
+    - id: grape_esca
+      crop: Grape
+      plantvillage_label: Grape___Esca_(Black_Measles)
+      plantvillage_count: 1383
+
+    - id: grape_isariopsis_leaf_blight
+      crop: Grape
+      plantvillage_label: Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
+      plantvillage_count: 1076

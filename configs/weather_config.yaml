@@ -1,0 +1,5 @@
+provider: open_meteo
+geocoding_url: https://geocoding-api.open-meteo.com/v1/search
+forecast_url: https://api.open-meteo.com/v1/forecast
+timeout_seconds: 8
+fallback: unavailable_without_weather_values

@@ -1,0 +1,192 @@
+﻿PlantVillage classes (nested extraction is listed separately):
+  Pepper__bell___Bacterial_spot: 997
+  Pepper__bell___healthy: 1478
+  PlantVillage/Pepper__bell___Bacterial_spot: 997
+  PlantVillage/Pepper__bell___healthy: 1478
+  PlantVillage/Potato___Early_blight: 1000
+  PlantVillage/Potato___healthy: 152
+  PlantVillage/Potato___Late_blight: 1000
+  PlantVillage/Tomato__Target_Spot: 1404
+  PlantVillage/Tomato__Tomato_mosaic_virus: 373
+  PlantVillage/Tomato__Tomato_YellowLeaf__Curl_Virus: 3208
+  PlantVillage/Tomato_Bacterial_spot: 2127
+  PlantVillage/Tomato_Early_blight: 1000
+  PlantVillage/Tomato_healthy: 1591
+  PlantVillage/Tomato_Late_blight: 1909
+  PlantVillage/Tomato_Leaf_Mold: 952
+  PlantVillage/Tomato_Septoria_leaf_spot: 1771
+  PlantVillage/Tomato_Spider_mites_Two_spotted_spider_mite: 1676
+  Potato___Early_blight: 1000
+  Potato___healthy: 152
+  Potato___Late_blight: 1000
+  Tomato__Target_Spot: 1404
+  Tomato__Tomato_mosaic_virus: 373
+  Tomato__Tomato_YellowLeaf__Curl_Virus: 3208
+  Tomato_Bacterial_spot: 2127
+  Tomato_Early_blight: 1000
+  Tomato_healthy: 1591
+  Tomato_Late_blight: 1909
+  Tomato_Leaf_Mold: 952
+  Tomato_Septoria_leaf_spot: 1771
+  Tomato_Spider_mites_Two_spotted_spider_mite: 1676
+
+PlantDoc classes by supplied split:
+  train/Bell_pepper leaf: 53
+  train/Bell_pepper leaf spot: 62
+  train/Potato leaf early blight: 109
+  train/Potato leaf late blight: 97
+  train/Tomato Early blight leaf: 79
+  train/Tomato leaf bacterial spot: 101
+  train/Tomato leaf late blight: 101
+  train/Tomato Septoria leaf spot: 140
+  test/Bell_pepper leaf: 8
+  test/Bell_pepper leaf spot: 9
+  test/Potato leaf early blight: 8
+  test/Potato leaf late blight: 8
+  test/Tomato Early blight leaf: 9
+  test/Tomato leaf bacterial spot: 9
+  test/Tomato leaf late blight: 10
+  test/Tomato Septoria leaf spot: 11
+  verified 5000/41276
+  verified 10000/41276
+  verified 15000/41276
+  verified 20000/41276
+  verified 25000/41276
+  verified 30000/41276
+  verified 35000/41276
+  verified 40000/41276
+
+PlantVillage: images=41276 unreadable=0 formats={'.jpg': 41272, '.png': 2, '.jpeg': 2}
+  dimensions: width=256..256, height=256..256, unique=1
+
+PlantDoc-Selected: images=814 unreadable=0 formats={'.jpg': 813, '.png': 1}
+  dimensions: width=143..6000, height=137..4000, unique=523
+  verified 5000/11458
+  verified 10000/11458
+
+PlantSeg images: images=11458 unreadable=0 formats={'.jpg': 11458}
+  dimensions: width=65..8256, height=52..5504, unique=5709
+  verified 5000/11458
+  verified 10000/11458
+
+PlantSeg masks: images=11458 unreadable=0 formats={'.png': 11458}
+  dimensions: width=65..8256, height=52..5504, unique=5709
+
+PlantSeg classes (Plant, disease, Train/Validation/Test/Total):
+  Apple | apple black rot | 57/9/17/83
+  Apple | apple mosaic virus | 61/10/18/89
+  Apple | apple rust | 96/15/28/139
+  Apple | apple scab | 179/27/52/258
+  Banana | banana anthracnose | 49/8/14/71
+  Banana | banana black leaf streak | 116/18/33/167
+  Banana | banana bunchy top | 109/17/31/157
+  Banana | banana cigar end rot | 41/7/12/60
+  Banana | banana cordana leaf spot | 38/6/11/55
+  Banana | banana panama disease | 43/7/13/63
+  Basil | basil downy mildew | 43/7/13/63
+  Bean | bean halo blight | 39/6/11/56
+  Bean | bean mosaic virus | 40/6/12/58
+  Bean | bean rust | 80/12/23/115
+  Bell pepper | bell pepper bacterial spot | 53/8/15/76
+  Bell pepper | bell pepper blossom end rot | 78/12/22/112
+  Bell pepper | bell pepper frogeye leaf spot | 21/4/6/31
+  Bell pepper | bell pepper powdery mildew | 19/3/6/28
+  Blueberry | blueberry anthracnose | 29/5/8/42
+  Blueberry | blueberry botrytis blight | 25/4/7/36
+  Blueberry | blueberry mummy berry | 33/5/9/47
+  Blueberry | blueberry rust | 29/5/9/43
+  Blueberry | blueberry scorch | 29/5/9/43
+  Broccoli | broccoli alternaria leaf spot | 45/7/13/65
+  Broccoli | broccoli downy mildew | 20/3/6/29
+  Broccoli | broccoli ring spot | 11/2/3/16
+  Cabbage | cabbage alternaria leaf spot | 41/7/13/61
+  Cabbage | cabbage black rot | 91/14/26/131
+  Cabbage | cabbage downy mildew | 58/9/17/84
+  Carrot | carrot alternaria leaf blight | 41/7/12/60
+  Carrot | carrot cavity spot | 50/8/14/72
+  Carrot | carrot cercospora leaf blight | 13/2/4/19
+  Cauliflower | cauliflower alternaria leaf spot | 37/6/11/54
+  Cauliflower | cauliflower bacterial soft rot | 25/4/7/36
+  Celery | celery anthracnose | 20/3/6/29
+  Celery | celery early blight | 25/4/7/36
+  Cherry | cherry leaf spot | 73/12/21/106
+  Cherry | cherry powdery mildew | 22/4/7/33
+  Citrus | citrus canker | 271/41/78/390
+  Citrus | citrus greening disease | 92/14/27/133
+  Coffee | coffee berry blotch | 81/13/24/118
+  Coffee | coffee black rot | 5/1/1/7
+  Coffee | coffee brown eye spot | 13/3/4/20
+  Coffee | coffee leaf rust | 110/17/32/159
+  Corn | corn gray leaf spot | 74/12/21/107
+  Corn | corn northern leaf blight | 90/14/26/130
+  Corn | corn rust | 123/19/35/177
+  Corn | corn smut | 140/22/40/202
+  Cucumber | cucumber angular leaf spot | 128/18/36/182
+  Cucumber | cucumber bacterial wilt | 72/14/22/108
+  Cucumber | cucumber powdery mildew | 130/20/38/188
+  Eggplant | eggplant cercospora leaf spot | 41/7/12/60
+  Eggplant | eggplant phomopsis fruit rot | 32/5/9/46
+  Eggplant | eggplant phytophthora blight | 22/4/7/33
+  Garlic | garlic leaf blight | 64/10/18/92
+  Garlic | garlic rust | 73/12/21/106
+  Ginger | ginger leaf spot | 17/3/5/25
+  Ginger | ginger sheath blight | 46/8/14/68
+  Grape | grape black rot | 85/13/24/122
+  Grape | grape downy mildew | 194/30/56/280
+  Grape | grape leaf spot | 63/10/18/91
+  Grapevine | grapevine leafroll disease | 49/8/14/71
+  Lettuce | lettuce downy mildew | 58/9/17/84
+  Lettuce | lettuce mosaic virus | 26/5/8/39
+  Maple | maple tar spot | 79/12/23/114
+  Peach | peach anthracnose | 8/2/3/13
+  Peach | peach brown rot | 120/18/35/173
+  Peach | peach leaf curl | 127/19/36/182
+  Peach | peach rust | 5/1/2/8
+  Peach | peach scab | 53/9/16/78
+  Plum | plum bacterial spot | 11/2/3/16
+  Plum | plum brown rot | 56/9/16/81
+  Plum | plum pocket disease | 40/6/11/57
+  Plum | plum pox virus | 22/4/7/33
+  Plum | plum rust | 23/4/7/34
+  Potato | potato early blight | 87/14/25/126
+  Potato | potato late blight | 81/13/23/117
+  Raspberry | raspberry fire blight | 23/4/7/34
+  Raspberry | raspberry gray mold | 27/5/8/40
+  Raspberry | raspberry leaf spot | 13/2/3/18
+  Raspberry | raspberry yellow rust | 26/4/7/37
+  Rice | rice blast | 57/9/17/83
+  Rice | rice sheath blight | 53/8/15/76
+  Soybean | bean rust | 81/13/24/118
+  Soybean | soybean bacterial blight | 63/10/18/91
+  Soybean | soybean brown spot | 49/8/14/71
+  Soybean | soybean downy mildew | 106/16/31/153
+  Soybean | soybean frog eye leaf spot | 165/25/48/238
+  Soybean | soybean mosaic | 81/13/23/117
+  Squash | squash powdery mildew | 127/19/36/182
+  Strawberry | strawberry anthracnose | 40/6/12/58
+  Strawberry | strawberry leaf scorch | 26/5/8/39
+  Tobacco | tobacco blue mold | 41/7/12/60
+  Tobacco | tobacco brown spot | 46/7/13/66
+  Tobacco | tobacco frogeye leaf spot | 19/3/6/28
+  Tobacco | tobacco mosaic virus | 28/5/8/41
+  Tomato | tomato bacterial leaf spot | 75/12/22/109
+  Tomato | tomato early blight | 130/20/37/187
+  Tomato | tomato late blight | 113/17/33/163
+  Tomato | tomato leaf mold | 108/17/31/156
+  Tomato | tomato mosaic virus | 43/7/13/63
+  Tomato | tomato septoria leaf spot | 90/14/26/130
+  Tomato | tomato yellow leaf curl virus | 64/10/19/93
+  Wheat | wheat bacterial leaf streak (black chaff) | 81/13/23/117
+  Wheat | wheat head scab | 221/34/64/319
+  Wheat | wheat leaf rust | 92/14/26/132
+  Wheat | wheat loose smut | 149/23/43/215
+  Wheat | wheat powdery mildew | 188/29/54/271
+  Wheat | wheat septoria blotch | 161/25/46/232
+  Wheat | wheat stem rust | 102/16/30/148
+  Wheat | wheat stripe rust | 248/38/72/358
+  Zucchini | zucchini bacterial wilt | 47/8/15/70
+  Zucchini | zucchini downy mildew | 30/5/9/44
+  Zucchini | zucchini powdery mildew | 147/23/43/213
+  Zucchini | zucchini yellow mosaic virus | 66/10/19/95
+PlantSeg mask-pair check: {'images': 11458, 'masks': 11458, 'missing_masks': 0, 'raw_dimension_mismatch': 14, 'oriented_dimension_mismatch': 0, 'unreadable_pair': 0}
+PlantSeg JSON summaries: {'train': {'images': 7916, 'annotations': 52898, 'categories': []}, 'val': {'images': 1247, 'annotations': 8927, 'categories': []}, 'test': {'images': 2295, 'annotations': 15569, 'categories': []}}

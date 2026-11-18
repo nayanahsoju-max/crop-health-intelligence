@@ -1,0 +1,44 @@
+version: 1
+minimum_prediction_confidence: 0.5
+severity:
+  supported_categories: [Mild, Moderate, Severe]
+  high_severity_category: Severe
+  high_severity_notice: "Reported severity is Severe; prioritize the listed general management guidance and seek local agricultural extension advice promptly."
+weather_rules:
+  - id: bacterial_spot_warm_moist_context
+    disease_ids: [tomato_bacterial_spot]
+    all_of:
+      - {field: temperature_c, operator: gte, value: 20}
+    any_of:
+      - {field: relative_humidity_percent, operator: gte, value: 85}
+      - {field: precipitation_mm, operator: gte, value: 0.1}
+    note: "Context threshold operationalizes the knowledge record's warm conditions and high humidity/free moisture description."
+  - id: early_blight_wet_context
+    disease_ids: [tomato_early_blight, potato_early_blight]
+    any_of:
+      - {field: relative_humidity_percent, operator: gte, value: 90}
+      - {field: precipitation_mm, operator: gte, value: 0.5}
+    note: "Context threshold operationalizes the knowledge record's wet foliage, heavy dew, and high humidity description."
+  - id: late_blight_cool_damp_context
+    disease_ids: [tomato_late_blight, potato_late_blight]
+    all_of:
+      - {field: temperature_c, operator: gte, value: 16}
+      - {field: temperature_c, operator: lte, value: 21}
+    any_of:
+      - {field: relative_humidity_percent, operator: gte, value: 80}
+      - {field: precipitation_mm, operator: gte, value: 0.5}
+    note: "Context threshold operationalizes the knowledge record's cool, damp conditions; it is not a disease risk model."
+  - id: grape_black_rot_warm_moist_context
+    disease_ids: [grape_black_rot]
+    all_of:
+      - {field: temperature_c, operator: gte, value: 20}
+    any_of:
+      - {field: relative_humidity_percent, operator: gte, value: 80}
+      - {field: precipitation_mm, operator: gte, value: 0.2}
+    note: "Context threshold operationalizes the knowledge record's warm temperatures (>= 20 °C) and prolonged moisture or high humidity (>= 80% RH or rain >= 0.2 mm); it indicates environmental favorability for Guignardia bidwellii spore germination, not a confirmed infection."
+  - id: grape_isariopsis_humid_wet_context
+    disease_ids: [grape_isariopsis_leaf_blight]
+    any_of:
+      - {field: relative_humidity_percent, operator: gte, value: 85}
+      - {field: precipitation_mm, operator: gte, value: 0.5}
+    note: "Context threshold operationalizes high relative humidity (>= 85%) or free moisture (precipitation >= 0.5 mm) associated with Pseudocercospora vitis late-season leaf spot progression; it is not a diagnosis."

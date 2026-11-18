@@ -1,0 +1,51 @@
+# Local settings and environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-tmp/
+.ruff_cache/
+*.sqlite3
+*.db
+*.pid
+*.log
+*.tmp
+*.zip
+
+# Frontend build products and dependencies
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Raw and local datasets
+data/**
+!data/README.md
+
+# Model binary weights and checkpoints
+models/**
+!models/.gitkeep
+
+# Intermediate dataset audit artifacts and image contact sheets
+reports/classification/**
+reports/severity/**
+reports/dataset_quality_audit/**
+reports/training_readiness/**
+reports/gvlid_quality_review/**
+reports/dataset_acquisition/**
+reports/plantvillage_expansion/**
+reports/data_manifest/**
+reports/grape_preparation/**
+
+# Preserve thesis documentation reports
+!reports/thesis/**
+
+# Editors and operating system files
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+

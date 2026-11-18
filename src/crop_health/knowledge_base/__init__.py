@@ -1,0 +1,1 @@
+"""Structured, sourced disease information."""

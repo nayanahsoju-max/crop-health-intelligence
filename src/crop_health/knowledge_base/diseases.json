@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "tomato_bacterial_spot",
+      "crop": "Tomato",
+      "disease_name": "Bacterial spot",
+      "condition_type": "disease",
+      "description": "A bacterial disease that can affect tomato seedlings, foliage, and fruit. Similar leaf symptoms can have other causes, so image classification alone is not confirmation.",
+      "symptoms": [
+        "Water-soaked areas on leaves that darken from yellow or light green to brown or black",
+        "Fruit spots may become brown and scabby"
+      ],
+      "favorable_weather_conditions": [
+        "High relative humidity and free moisture on plant surfaces",
+        "Symptoms develop rapidly at temperatures around 20 °C (68 °F) and above; cool nights may suppress development"
+      ],
+      "prevention": [
+        "Use pathogen-free seed and disease-free transplants where available",
+        "Avoid sprinkler irrigation where practical",
+        "Rotate with a nonhost crop"
+      ],
+      "general_management": [
+        "Avoid moving water from infected plants onto healthy plants",
+        "Use clean planting material and monitor plants",
+        "Seek local agricultural extension advice for diagnosis and locally appropriate management"
+      ],
+      "sources": [
+        {
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "title": "UC IPM Pest Management Guidelines: Tomato — Bacterial Spot",
+          "url": "https://ipm.ucanr.edu/pdf/pmg/pmgtomato.pdf",
+          "accessed": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "tomato_early_blight",
+      "crop": "Tomato",
+      "disease_name": "Early blight",
+      "condition_type": "disease",
+      "description": "A fungal disease affecting tomato foliage, stems, and fruit, often first noticed on older lower foliage.",
+      "symptoms": [
+        "Round brown leaf spots, often with concentric target-like rings",
+        "Yellowing around spots and premature leaf death may occur",
+        "Dark, leathery fruit spots can occur near the stem"
+      ],
+      "favorable_weather_conditions": [
+        "Moderate to warm temperatures, especially with wet foliage, heavy dew, or relative humidity around 90% or higher"
+      ],
+      "prevention": [
+        "Use disease-free planting material",
+        "Mulch soil to reduce splash",
+        "Water at the plant base and maintain airflow",
+        "Rotate away from tomato and related crops for at least two years where feasible"
+      ],
+      "general_management": [
+        "Scout lower foliage regularly",
+        "Remove affected leaves carefully and clean tools",
+        "Keep foliage dry where practical and obtain local extension guidance if symptoms progress"
+      ],
+      "sources": [
+        {
+          "organization": "University of Minnesota Extension",
+          "title": "Early blight in tomato and potato",
+          "url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/early-blight-in-tomato-and-potato",
+          "accessed": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "potato_early_blight",
+      "crop": "Potato",
+      "disease_name": "Early blight",
+      "condition_type": "disease",
+      "description": "A fungal disease of potato and other solanaceous crops that commonly develops on older foliage and can affect stems and tubers/fruiting parts.",
+      "symptoms": [
+        "Dark round leaf spots that may develop concentric rings",
+        "Yellowing and drying around lesions; older leaves are commonly affected first"
+      ],
+      "favorable_weather_conditions": [
+        "Moderate to warm temperatures combined with wet weather or heavy dew; high relative humidity favors spread"
+      ],
+      "prevention": [
+        "Maintain crop rotation and manage infected plant debris",
+        "Avoid overhead irrigation where practical",
+        "Support airflow and reduce soil splash"
+      ],
+      "general_management": [
+        "Scout older foliage and remove infected debris",
+        "Use disease-free planting material and seek locally appropriate extension advice"
+      ],
+      "sources": [
+        {
+          "organization": "University of Minnesota Extension",
+          "title": "Early blight in tomato and potato",
+          "url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/early-blight-in-tomato-and-potato",
+          "accessed": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "tomato_late_blight",
+      "crop": "Tomato",
+      "disease_name": "Late blight",
+      "condition_type": "disease",
+      "description": "A rapidly spreading disease caused by the water mold Phytophthora infestans that can affect tomato foliage, stems, and fruit.",
+      "symptoms": [
+        "Large dark brown leaf blotches with green-gray edges, not limited by major veins",
+        "White growth may appear on infected tissue in humid conditions",
+        "Firm dark brown fruit spots may enlarge"
+      ],
+      "favorable_weather_conditions": [
+        "Cool, damp conditions, commonly around 60–70 °F (16–21 °C); prolonged hot, dry weather can slow spread"
+      ],
+      "prevention": [
+        "Inspect transplants before planting",
+        "Keep foliage dry where practical and provide airflow",
+        "Avoid planting in recently used solanaceous-crop areas where feasible"
+      ],
+      "general_management": [
+        "Scout frequently; suspected late blight warrants prompt confirmation and consultation with local extension because it can spread rapidly",
+        "Remove confirmed infected plant material following local guidance",
+        "Use certified disease-free potato seed when planting potatoes"
+      ],
+      "sources": [
+        {
+          "organization": "University of Minnesota Extension",
+          "title": "Late blight of tomato and potato",
+          "url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/late-blight",
+          "accessed": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "potato_late_blight",
+      "crop": "Potato",
+      "disease_name": "Late blight",
+      "condition_type": "disease",
+      "description": "A rapidly spreading disease caused by the water mold Phytophthora infestans affecting potato foliage and tubers.",
+      "symptoms": [
+        "Large dark brown leaf blotches with green-gray edges",
+        "White growth may appear on infected tissue in humid conditions",
+        "Infected tubers may be discolored, shrunken, or develop soft rot"
+      ],
+      "favorable_weather_conditions": [
+        "Cool, damp conditions, commonly around 60–70 °F (16–21 °C); prolonged hot, dry weather can slow spread"
+      ],
+      "prevention": [
+        "Plant certified potato seed",
+        "Control volunteer potato plants and manage cull piles",
+        "Maintain airflow and avoid prolonged leaf wetness where practical"
+      ],
+      "general_management": [
+        "Scout frequently and promptly seek local extension guidance for suspected cases",
+        "Remove or manage infected plants and crop residues according to local guidance"
+      ],
+      "sources": [
+        {
+          "organization": "University of Minnesota Extension",
+          "title": "Late blight of tomato and potato",
+          "url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/late-blight",
+          "accessed": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "tomato_healthy",
+      "crop": "Tomato",
+      "disease_name": "Healthy / no selected disease identified",
+      "condition_type": "status",
+      "description": "The model selected its tomato healthy class. This does not rule out other diseases, pests, nutrient problems, or early symptoms outside the supported classes.",
+      "symptoms": [],
+      "favorable_weather_conditions": [],
+      "prevention": [
+        "Continue routine crop monitoring and use locally recommended crop care practices"
+      ],
+      "general_management": [
+        "If symptoms are visible or persist, seek confirmation from an agricultural extension professional"
+      ],
+      "sources": [
+        {
+          "organization": "University of Minnesota Extension",
+          "title": "Early blight in tomato and potato — disease identification context",
+          "url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/early-blight-in-tomato-and-potato",
+          "accessed": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "potato_healthy",
+      "crop": "Potato",
+      "disease_name": "Healthy / no selected disease identified",
+      "condition_type": "status",
+      "description": "The model selected its potato healthy class. This does not rule out other diseases, pests, nutrient problems, or early symptoms outside the supported classes.",
+      "symptoms": [],
+      "favorable_weather_conditions": [],
+      "prevention": [
+        "Continue routine crop monitoring and use locally recommended crop care practices"
+      ],
+      "general_management": [
+        "If symptoms are visible or persist, seek confirmation from an agricultural extension professional"
+      ],
+      "sources": [
+        {
+          "organization": "University of Minnesota Extension",
+          "title": "Early blight in tomato and potato — disease identification context",
+          "url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/early-blight-in-tomato-and-potato",
+          "accessed": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "id": "grape_black_rot",
+      "crop": "Grape",
+      "disease_name": "Grape black rot",
+      "condition_type": "disease",
+      "description": "A destructive fungal disease of grapes caused by Guignardia bidwellii (anamorph Phyllosticta ampelicida) that attacks all green vine tissues including leaves, shoots, petioles, and developing fruit clusters.",
+      "symptoms": [
+        "Small, circular to angular reddish-brown or tan spots on leaves with distinct dark borders",
+        "Tiny black specks (fungal fruiting bodies called pycnidia) embedded in leaf lesions, often arranged in a ring near the margin",
+        "Sunken, dark elongated cankers on young shoots, petioles, and cluster stems",
+        "Infected berries soften, turn brown, and rapidly shrivel into hard, black, wrinkled mummies that often remain attached to cluster stems"
+      ],
+      "favorable_weather_conditions": [
+        "Warm temperatures (around 20–27 °C / 68–80 °F) combined with free moisture on foliage from rain or heavy dew",
+        "High relative humidity (80% or higher) that slows canopy drying and favors spore release and infection"
+      ],
+      "prevention": [
+        "Sanitation: collect and destroy mummified berries from the canopy and ground during dormant pruning to remove primary inoculum",
+        "Canopy management: prune and position shoots to promote rapid drying of foliage and cluster exposure to sunlight and airflow",
+        "Manage weeds and floor vegetation under the trellis to reduce ground humidity"
+      ],
+      "general_management": [
+        "Scout young leaves and shoot bases early in the growing season, especially from immediate pre-bloom through early fruit set",
+        "Prune out infected cane cankers during dormant pruning",
+        "Consult local university agricultural extension or viticulture advisors for regional disease timing and locally approved management options"
+      ],
+      "sources": [
+        {
+          "organization": "Ohio State University Extension",
+          "title": "Grape Black Rot (PLPATH-FRU-24)",
+          "url": "https://ohioline.osu.edu/factsheet/plpath-fru-24",
+          "accessed": "2026-11-17"
+        },
+        {
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "title": "UC IPM Pest Management Guidelines: Grape",
+          "url": "https://ipm.ucanr.edu/agriculture/grape/",
+          "accessed": "2026-11-17"
+        }
+      ]
+    },
+    {
+      "id": "grape_esca",
+      "crop": "Grape",
+      "disease_name": "Esca (black measles)",
+      "condition_type": "disease",
+      "description": "A chronic grapevine trunk disease complex caused by wood-colonizing fungi (primarily Phaeomoniella chlamydospora and Phaeoacremonium species) that infect the vascular wood of mature vines, producing foliar symptoms and berry spotting.",
+      "symptoms": [
+        "Distinctive 'tiger-stripe' foliar symptoms with chlorotic and necrotic interveinal bands between green veins (stripes turn red on red cultivars and yellow on white cultivars before drying)",
+        "Severe hot-weather form (apoplexy) where shoots or entire vines wilt and dry up suddenly",
+        "Small, round, dark purple-to-black spots resembling measles on developing berries, which may crack or dry out",
+        "Dark vascular streaking and spongy wood decay visible in cross-sections of infected trunks or cordons"
+      ],
+      "favorable_weather_conditions": [
+        "Foliar and berry symptom expression is strongly aggravated by summer heat, high evaporative demand, and moisture stress following winter infection periods"
+      ],
+      "prevention": [
+        "Pruning wound protection: apply approved wound protectants or sealants to large pruning cuts, particularly during wet dormant seasons",
+        "Delay pruning until late in the dormant season when wounds heal more rapidly and spore flight may be lower",
+        "Plant certified disease-free nursery rootstock and scion wood"
+      ],
+      "general_management": [
+        "Mark symptomatic vines during the growing season when foliar tiger-striping and measles symptoms are most visible",
+        "Practice vine renewal or remedial surgery by retraining healthy basal suckers if trunk infection is localized above the graft union",
+        "Disinfect pruning shears between vines to minimize mechanical transmission",
+        "Consult regional viticulture extension specialists for trunk disease assessment and sustainable vineyard renewal strategies"
+      ],
+      "sources": [
+        {
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "title": "UC IPM Pest Management Guidelines: Grape — Esca (Black Measles)",
+          "url": "https://ipm.ucanr.edu/PMG/r302100511.html",
+          "accessed": "2026-11-17"
+        }
+      ]
+    },
+    {
+      "id": "grape_isariopsis_leaf_blight",
+      "crop": "Grape",
+      "disease_name": "Grape Isariopsis leaf blight",
+      "condition_type": "disease",
+      "description": "A late-season foliar fungal disease of grapevines caused by Pseudocercospora vitis (historically classified as Isariopsis clavispora or Phaeoisariopsis clavispora; teleomorph Mycosphaerella personata) that primarily infects mature leaves.",
+      "symptoms": [
+        "Large, irregular or angular dark reddish-brown to black spots on leaves, often partially delimited by leaf veins",
+        "Lesions become dry and brittle with age, sometimes dropping out",
+        "Dark velvety or olivaceous fungal growth (conidiophores) develops on the undersides of leaf spots in humid weather",
+        "Premature defoliation in severe or late-season infections, which can impede late fruit maturation and vine carbohydrate storage"
+      ],
+      "favorable_weather_conditions": [
+        "Persistent high relative humidity (85% or higher) and prolonged leaf surface wetness from rain, overhead watering, or heavy dew",
+        "Warm, humid late-summer conditions in dense canopies with restricted air movement"
+      ],
+      "prevention": [
+        "Canopy management: practice shoot thinning, suckering, and leaf removal around the fruiting zone to improve air circulation and sunlight penetration",
+        "Avoid overhead irrigation that wets the canopy and prolongs leaf surface wetness",
+        "Sanitation: manage fallen leaf debris after harvest to reduce overwintering fungal structures"
+      ],
+      "general_management": [
+        "Scout older, mature leaves in the interior and lower canopy during mid-to-late summer",
+        "Maintain balanced vine nutrition and avoid excessive vegetative growth that impedes airflow",
+        "Consult regional agricultural extension viticulture advisors for local disease risk evaluation and integrated canopy management"
+      ],
+      "sources": [
+        {
+          "organization": "NC State Extension, North Carolina State University",
+          "title": "North Carolina Grape Grower's Guide — Chapter 8: Pest Management",
+          "url": "https://content.ces.ncsu.edu/north-carolina-grape-growers-guide/chapter-8-pest-management",
+          "accessed": "2026-11-17"
+        }
+      ]
+    }
+  ]
+}

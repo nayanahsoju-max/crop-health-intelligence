@@ -1,0 +1,131 @@
+version: 1
+analysis_date: 2026-09-29
+
+datasets:
+  plantvillage:
+    path: data/PlantVillage
+    class_root: data/PlantVillage
+    excluded_nested_tree: data/PlantVillage/PlantVillage
+    split: generated_grouped_deterministically
+    note: Classifier reads selected top-level classes only. Stage 20B SHA-256 audit found the excluded nested tree contains every selected image hash; the nested tree remains excluded.
+  plantseg:
+    path: data/plantsegv3
+    images: data/plantsegv3/images
+    masks: data/plantsegv3/annotations
+    metadata: data/plantsegv3/Metadatav2.csv
+    annotations:
+      train: data/plantsegv3/annotation_train.json
+      validation: data/plantsegv3/annotation_val.json
+      test: data/plantsegv3/annotation_test.json
+    exif_orientation_required: true
+  plantdoc:
+    path: data/PlantDoc-Selected
+    split: supplied_train_test
+    role: external_evaluation_only
+
+class_selection:
+  status: proposed_after_dataset_inspection
+  healthy_labels_are_plantvillage_only: true
+  classes:
+    - id: tomato_healthy
+      crop: Tomato
+      display_name: Healthy
+      plantvillage_label: Tomato_healthy
+      plantvillage_count: 1591
+      plantseg_label: null
+      plantdoc_label: null
+      segmentation_available: false
+      external_test_available: false
+    - id: tomato_bacterial_spot
+      crop: Tomato
+      display_name: Bacterial spot
+      plantvillage_label: Tomato_Bacterial_spot
+      plantvillage_count: 2127
+      plantseg_crop: Tomato
+      plantseg_label: tomato bacterial leaf spot
+      plantseg_counts: {train: 75, validation: 12, test: 22}
+      plantdoc_label: Tomato leaf bacterial spot
+      plantdoc_counts: {train: 101, test: 9}
+      segmentation_available: true
+      external_test_available: true
+    - id: tomato_early_blight
+      crop: Tomato
+      display_name: Early blight
+      plantvillage_label: Tomato_Early_blight
+      plantvillage_count: 1000
+      plantseg_crop: Tomato
+      plantseg_label: tomato early blight
+      plantseg_counts: {train: 130, validation: 20, test: 37}
+      plantdoc_label: Tomato Early blight leaf
+      plantdoc_counts: {train: 79, test: 9}
+      segmentation_available: true
+      external_test_available: true
+    - id: tomato_late_blight
+      crop: Tomato
+      display_name: Late blight
+      plantvillage_label: Tomato_Late_blight
+      plantvillage_count: 1909
+      plantseg_crop: Tomato
+      plantseg_label: tomato late blight
+      plantseg_counts: {train: 113, validation: 17, test: 33}
+      plantdoc_label: Tomato leaf late blight
+      plantdoc_counts: {train: 101, test: 10}
+      segmentation_available: true
+      external_test_available: true
+    - id: potato_healthy
+      crop: Potato
+      display_name: Healthy
+      plantvillage_label: Potato___healthy
+      plantvillage_count: 152
+      plantseg_label: null
+      plantdoc_label: null
+      segmentation_available: false
+      external_test_available: false
+      imbalance_warning: Only 152 PlantVillage images are present.
+    - id: potato_early_blight
+      crop: Potato
+      display_name: Early blight
+      plantvillage_label: Potato___Early_blight
+      plantvillage_count: 1000
+      plantseg_crop: Potato
+      plantseg_label: potato early blight
+      plantseg_counts: {train: 87, validation: 14, test: 25}
+      plantdoc_label: Potato leaf early blight
+      plantdoc_counts: {train: 109, test: 8}
+      segmentation_available: true
+      external_test_available: true
+    - id: potato_late_blight
+      crop: Potato
+      display_name: Late blight
+      plantvillage_label: Potato___Late_blight
+      plantvillage_count: 1000
+      plantseg_crop: Potato
+      plantseg_label: potato late blight
+      plantseg_counts: {train: 81, validation: 13, test: 23}
+      plantdoc_label: Potato leaf late blight
+      plantdoc_counts: {train: 97, test: 8}
+      segmentation_available: true
+      external_test_available: true
+
+excluded_classes:
+  - id: tomato_septoria_leaf_spot
+    plantvillage_label: Tomato_Septoria_leaf_spot
+    plantseg_label: tomato septoria leaf spot
+    plantdoc_label: Tomato Septoria leaf spot
+    reason: Four early-blight-named files were found in the PlantDoc Septoria training folder; audit label content before reconsideration.
+  - id: pepper_bacterial_spot
+    plantvillage_label: Pepper__bell___Bacterial_spot
+    plantseg_label: bell pepper bacterial spot
+    plantdoc_label: Bell_pepper leaf spot
+    reason: The PlantDoc class is broader than bacterial spot and visible filenames indicate possible label mixing.
+
+external_evaluation:
+  dataset: plantdoc
+  use_training_split_for_model_training: false
+  supported_classes:
+    - tomato_bacterial_spot
+    - tomato_early_blight
+    - tomato_late_blight
+    - potato_early_blight
+    - potato_late_blight
+  healthy_classes_supported: false

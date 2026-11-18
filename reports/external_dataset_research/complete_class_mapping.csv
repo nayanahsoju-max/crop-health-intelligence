@@ -1,0 +1,28 @@
+canonical_class,crop,disease,original_source_label,source,reported_or_local_count,status,concern
+tomato_healthy,Tomato,Healthy,Tomato___healthy,PlantVillage,1585 local unique,existing candidate,Controlled source label; Stage20B
+tomato_bacterial_spot,Tomato,Bacterial spot,Tomato___Bacterial_spot,PlantVillage,2127 local unique,existing candidate,Controlled; Stage20B
+tomato_early_blight,Tomato,Early blight,Tomato___Early_blight,PlantVillage,1000 local unique,existing candidate,Controlled; Stage20B
+tomato_late_blight,Tomato,Late blight,Tomato___Late_blight,PlantVillage,1901 local unique,existing candidate,Controlled; Stage20B
+potato_healthy,Potato,Healthy,Potato___healthy,PlantVillage,152 local unique,existing candidate,Small class; Stage20B
+potato_early_blight,Potato,Early blight,Potato___Early_blight,PlantVillage,1000 local unique,existing candidate,Stage20B
+potato_late_blight,Potato,Late blight,Potato___Late_blight,PlantVillage,1000 local unique,existing candidate,Stage20B
+grape_healthy,Grape,Healthy,Grape___healthy,PlantVillage-Grape,423 local,existing candidate,Controlled; new grouped split
+grape_black_rot,Grape,Black rot,Grape___Black_rot,PlantVillage-Grape,1180 local,existing candidate,Folder label not independently diagnosed
+grape_esca,Grape,Esca (Black Measles),Grape___Esca_(Black_Measles),PlantVillage-Grape,1383 local,existing candidate,Esca-complex field label compatibility uncertain
+grape_isariopsis_leaf_blight,Grape,Isariopsis Leaf Spot / leaf blight,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),PlantVillage-Grape,1076 local,existing candidate,Do not map generic PlantSeg leaf spot
+grape_downy_mildew,Grape,Downy mildew,Downy mildew,NGLD v5,966 reported,proposed pending acquisition,Field label and overlap review
+grape_powdery_mildew,Grape,Powdery mildew,Powdery mildew,NGLD v5,406 reported,proposed pending acquisition,Smaller class; field label review
+apple_healthy,Apple,Healthy,Apple___healthy,PlantVillage Apple subset,1645 reported,proposed pending acquisition,Controlled; payload verification
+apple_scab,Apple,Apple scab,Apple___Apple_scab,PlantVillage Apple subset,630 reported,proposed pending acquisition,Preserve original source label
+apple_black_rot,Apple,Black rot,Apple___Black_rot,PlantVillage Apple subset,621 reported,proposed pending acquisition,Preserve original source label
+apple_cedar_apple_rust,Apple,Cedar apple rust,Apple___Cedar_apple_rust,PlantVillage Apple subset,275 reported,proposed pending acquisition,Small class
+rice_healthy,Rice,Healthy,healthy,Rice Leaf Bacterial and Fungal Dataset v2,157 reported,proposed pending acquisition,Original photos only
+rice_bacterial_leaf_blight,Rice,Bacterial leaf blight,Bacterial leaf blight,Rice Leaf Bacterial and Fungal Dataset v2,180 reported,proposed pending acquisition,Verify diagnostic criteria
+rice_brown_spot,Rice,Brown spot,Brown spot,Rice Leaf Bacterial and Fungal Dataset v2,267 reported,proposed pending acquisition,Original photos only
+rice_blast,Rice,Blast,Blast,Rice Leaf Bacterial and Fungal Dataset v2,305 reported,proposed pending acquisition,PlantSeg mask candidate
+rice_leaf_scald,Rice,Leaf scald,Leaf scald,Rice Leaf Bacterial and Fungal Dataset v2,189 reported,proposed pending acquisition,Original photos only
+rice_narrow_brown_leaf_spot,Rice,Narrow brown leaf spot,Narrow brown leaf spot,Rice Leaf Bacterial and Fungal Dataset v2,117 reported,proposed pending acquisition,Small class
+rice_sheath_blight,Rice,Sheath blight,Sheath blight,Rice Leaf Bacterial and Fungal Dataset v2,271 reported,proposed pending acquisition,PlantSeg mask candidate
+cassava_healthy,Cassava,Healthy,healthy,Kaggle Cassava Leaf Disease Classification,unverified,conditional provisional,Restricted sharing and payload validation
+cassava_brown_streak,Cassava,Cassava brown streak disease,Cassava Brown Streak Disease,Kaggle Cassava Leaf Disease Classification,unverified,conditional provisional,Verify source class criteria
+cassava_mosaic,Cassava,Cassava mosaic disease,Cassava Mosaic Disease,Kaggle Cassava Leaf Disease Classification,unverified,conditional provisional,Verify source class criteria

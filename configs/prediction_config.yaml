@@ -1,0 +1,35 @@
+prediction:
+  device: cpu
+  image_size: 224
+  max_upload_bytes: 10485760
+  max_image_pixels: 16000000
+  max_image_dimension: 8192
+  gradcam_preview_max_dimension: 1024
+  supported_uploads:
+    JPEG: {extensions: [.jpg, .jpeg], media_type: image/jpeg}
+    PNG: {extension: .png, media_type: image/png}
+    WEBP: {extension: .webp, media_type: image/webp}
+  severity_mask:
+    format: PNG
+    max_upload_bytes: 10485760
+
+  models:
+    tomato_potato:
+      crops:
+        - tomato
+        - potato
+      checkpoint_path: models/classifier/runs/tomato-potato-2026-11-17-b/efficientnet_b0_best.pt
+      class_mapping_path: models/classifier/runs/tomato-potato-2026-11-17-b/class_mapping.json
+      model_version: efficientnet_b0_tomato_potato_2026_11_17_b
+
+    grape:
+      crops:
+        - grape
+      checkpoint_path: models/classifier/runs/grape-2026-11-17-a/efficientnet_b0_best.pt
+      class_mapping_path: models/classifier/runs/grape-2026-11-17-a/class_mapping.json
+      model_version: efficientnet_b0_grape_2026_11_17_a
+
+  # Fallback settings for legacy callers
+  checkpoint_path: models/classifier/runs/tomato-potato-2026-11-17-b/efficientnet_b0_best.pt
+  class_mapping_path: models/classifier/runs/tomato-potato-2026-11-17-b/class_mapping.json
+  model_version: efficientnet_b0_tomato_potato_2026_11_17_b

@@ -1,0 +1,16 @@
+severity:
+  thresholds_percent:
+    mild_max_exclusive: 10.0
+    moderate_max_exclusive: 30.0
+  mask_positive_threshold: 0
+  maximum_working_dimension: 1024
+  leaf_segmentation:
+    method: hsv_green_foreground_with_lesion_mask
+    hue_min_0_255: 35
+    hue_max_0_255: 105
+    saturation_min_0_255: 110
+    value_min_0_255: 25
+    closing_kernel_size: 7
+    minimum_component_fraction: 0.001
+    minimum_green_fraction: 0.005
+  note: Demonstration defaults only; validate thresholds and color segmentation against expert-scored field images before use.

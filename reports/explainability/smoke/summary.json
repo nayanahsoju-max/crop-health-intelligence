@@ -1,0 +1,15 @@
+{
+  "image": "data\\PlantVillage\\Tomato_healthy\\000146ff-92a4-4db6-90ad-8fce2ae4fddd___GH_HL Leaf 259.1.JPG",
+  "class_id": "tomato_bacterial_spot",
+  "confidence": 0.18890641629695892,
+  "input_size": [
+    256,
+    256
+  ],
+  "heatmap_size": [
+    256,
+    256
+  ],
+  "same_class_as_prediction": true,
+  "note": "Grad-CAM visualizes model evidence; it does not establish biological causation."
+}
