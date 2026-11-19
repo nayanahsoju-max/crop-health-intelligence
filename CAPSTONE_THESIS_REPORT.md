@@ -131,28 +131,28 @@ The system is evaluated exclusively on internal test-set holdouts derived from P
 | Figure | Caption |
 |--------|---------|
 | Figure 1 | Overall System Architecture — Crop Health Intelligence |
-| Figure 2 | End-to-End Prediction Workflow |
-| Figure 3 | Dataset Split Methodology (Group-Aware Stratified) |
-| Figure 4 | Multi-Crop Routing Logic |
-| Figure 5 | EfficientNet-B0 Inference Pipeline |
-| Figure 6 | Grad-CAM Generation Workflow |
-| Figure 7 | Severity Estimation Workflow (HSV Foreground Masking) |
-| Figure 8 | Weather and Recommendation Pipeline |
-| Figure 9 | Frontend–Backend Communication |
-| Figure 10 | Database Persistence Workflow |
-| Figure 11 | Tomato–Potato Confusion Matrix (Test Set, 1,317 Samples) |
-| Figure 12 | Grape Confusion Matrix (Test Set, 544 Samples) |
-| Figure 13 | Tomato–Potato Training and Validation Curves |
-| Figure 14 | Grape Training and Validation Curves |
-| Figure 15 | Per-Class Precision, Recall, and F1 Scores |
-| Figure 16 | Grad-CAM Overlay Samples (Grape Leaf Images) |
-| Figure 17 | Severity Estimation Demo (Annotated Lesion Mask) |
-| Figure 18 | Application Screenshot — Dashboard and Crop Selector |
-| Figure 19 | Application Screenshot — Leaf Image Upload |
-| Figure 20 | Application Screenshot — Prediction Results |
-| Figure 21 | Application Screenshot — Grad-CAM Heatmap and Overlay |
-| Figure 22 | Application Screenshot — Disease Recommendations |
-| Figure 23 | Application Screenshot — Prediction History |
+| Figure 2 | Dataset Split Methodology (Group-Aware Stratified) |
+| Figure 3 | EfficientNet-B0 Inference Pipeline |
+| Figure 4 | Tomato–Potato Training and Validation Curves |
+| Figure 5 | Grape Training and Validation Curves |
+| Figure 6 | Multi-Crop Routing Logic |
+| Figure 7 | End-to-End Prediction Workflow |
+| Figure 8 | Grad-CAM Generation Workflow |
+| Figure 9 | Grad-CAM Overlay Samples (Grape Leaf Images) |
+| Figure 10 | Severity Estimation Workflow (HSV Foreground Masking) |
+| Figure 11 | Severity Estimation Demo (Annotated Lesion Mask) |
+| Figure 12 | Weather and Recommendation Pipeline |
+| Figure 13 | Frontend–Backend Communication |
+| Figure 14 | Database Persistence Workflow |
+| Figure 15 | Application Screenshot — Dashboard and Crop Selector |
+| Figure 16 | Application Screenshot — Leaf Image Upload |
+| Figure 17 | Application Screenshot — Prediction Results |
+| Figure 18 | Application Screenshot — Grad-CAM Heatmap and Overlay |
+| Figure 19 | Application Screenshot — Disease Recommendations |
+| Figure 20 | Application Screenshot — Prediction History |
+| Figure 21 | Tomato–Potato Confusion Matrix (Test Set, 1,317 Samples) |
+| Figure 22 | Grape Confusion Matrix (Test Set, 544 Samples) |
+| Figure 23 | Per-Class Precision, Recall, and F1 Scores |
 
 ---
 
@@ -355,8 +355,8 @@ The split ratios and resulting partition sizes are shown in Table 1.
 
 Both splits are fixed by a seed of 42 and recorded in a split manifest with SHA-256 checksums (Tomato-Potato: `40b08f14…`, Grape: `9978dff1…`), ensuring reproducibility.
 
-**Figure 3 — Dataset Split Workflow**  
-![Figure 3](doc_assets/fig03_dataset_split_workflow.png)
+**Figure 2 — Dataset Split Methodology (Group-Aware Stratified)**  
+![Figure 2](doc_assets/fig03_dataset_split_workflow.png)
 
 ### 2.4 Preprocessing Pipeline
 
@@ -378,8 +378,8 @@ EfficientNet-B0 uses a mobile inverted bottleneck (MBConv) block structure with 
 
 The model is built using the `torchvision.models.efficientnet_b0` factory function. Total parameters are approximately 5.3M for EfficientNet-B0, with the full model fine-tuned (all layers updated during training) on the plant disease data.
 
-**Figure 5 — EfficientNet-B0 Inference Pipeline**  
-![Figure 5](doc_assets/fig05_efficientnet_pipeline.png)
+**Figure 3 — EfficientNet-B0 Inference Pipeline**  
+![Figure 3](doc_assets/fig05_efficientnet_pipeline.png)
 
 ### 2.6 Training Configuration
 
@@ -402,11 +402,11 @@ The tomato-potato model reached its best validation performance at **epoch 11** 
 
 Checkpoint files save the model `state_dict` together with the class ID list for consistency validation. At load time, the system verifies that the checkpoint's class list matches the class mapping file; a mismatch raises a `ValueError` to prevent silent errors from mismatched model/mapping pairs.
 
-**Figure 13 — Tomato–Potato Training Curves**  
-![Figure 13](doc_assets/fig13_tomato_potato_training_curves.png)
+**Figure 4 — Tomato–Potato Training and Validation Curves**  
+![Figure 4](doc_assets/fig13_tomato_potato_training_curves.png)
 
-**Figure 14 — Grape Training Curves**  
-![Figure 14](doc_assets/fig14_grape_training_curves.png)
+**Figure 5 — Grape Training and Validation Curves**  
+![Figure 5](doc_assets/fig14_grape_training_curves.png)
 
 ### 2.7 Multi-Crop Routing
 
@@ -424,12 +424,12 @@ crop_to_route = {
 
 If the `crop` field is absent or does not match a supported crop, the endpoint returns HTTP 422 with a descriptive error listing the supported values. This is enforced at the top of the predict endpoint before any model loading occurs.
 
-**Figure 4 — Multi-Crop Routing Logic**  
-![Figure 4](doc_assets/fig04_multicrop_routing.png)
+**Figure 6 — Multi-Crop Routing Logic**  
+![Figure 6](doc_assets/fig04_multicrop_routing.png)
 
 ### 2.8 Inference Flow
 
-The end-to-end inference flow, illustrated in Figure 2, proceeds as follows:
+The end-to-end inference flow, illustrated in Figure 7, proceeds as follows:
 
 1. The user uploads a leaf image and selects a crop (and optionally provides a location and lesion mask).
 2. The FastAPI endpoint validates the upload (file type, size, dimensions after EXIF correction).
@@ -443,8 +443,8 @@ The end-to-end inference flow, illustrated in Figure 2, proceeds as follows:
 10. The result, including Grad-CAM images encoded as base64 data URLs, is assembled and persisted to the database.
 11. The JSON response is returned to the frontend.
 
-**Figure 2 — End-to-End Prediction Workflow**  
-![Figure 2](doc_assets/fig02_prediction_workflow.png)
+**Figure 7 — End-to-End Prediction Workflow**  
+![Figure 7](doc_assets/fig02_prediction_workflow.png)
 
 ### 2.9 Grad-CAM Explainability
 
@@ -479,11 +479,11 @@ The output is a `GradCAMResult` dataclass containing the class ID, confidence, c
 
 > **Important disclaimer:** Grad-CAM visualises model activations. It does not establish biological causation or confirm that the highlighted tissue is the actual disease region. This caveat is embedded in the code docstring and displayed in the frontend.
 
-**Figure 6 — Grad-CAM Generation Workflow**  
-![Figure 6](doc_assets/fig06_gradcam_workflow.png)
+**Figure 8 — Grad-CAM Generation Workflow**  
+![Figure 8](doc_assets/fig06_gradcam_workflow.png)
 
-**Figure 16 — Grad-CAM Overlay Samples (Grape Leaf Images from GVLiD-v5)**  
-![Figure 16](doc_assets/fig16_gradcam_samples.png)
+**Figure 9 — Grad-CAM Overlay Samples (Grape Leaf Images)**  
+![Figure 9](doc_assets/fig16_gradcam_samples.png)
 
 ### 2.10 Severity Estimation
 
@@ -512,11 +512,11 @@ The thresholds are configurable via `configs/severity_config.yaml`. The method n
 
 > **Limitations:** HSV foreground masking can confuse fruit, soil, and shadows with leaf tissue. The severity estimate is explicitly labelled a provisional, image-processing heuristic — not a validated agronomic measurement.
 
-**Figure 7 — Severity Estimation Workflow**  
-![Figure 7](doc_assets/fig07_severity_estimation_workflow.png)
+**Figure 10 — Severity Estimation Workflow (HSV Foreground Masking)**  
+![Figure 10](doc_assets/fig07_severity_estimation_workflow.png)
 
-**Figure 17 — Severity Estimation Demo**  
-![Figure 17](doc_assets/fig17_severity_demo.png)
+**Figure 11 — Severity Estimation Demo (Annotated Lesion Mask)**  
+![Figure 11](doc_assets/fig17_severity_demo.png)
 
 ### 2.11 Disease Knowledge Base
 
@@ -561,8 +561,8 @@ The `RecommendationEngine` assembles a structured, source-attributed recommendat
 
 **Weather guidance:** If a location was provided and the Open-Meteo request succeeded, the engine evaluates YAML-defined weather rules against the current observations. Each rule specifies a list of `disease_ids`, an `all_of` list of conditions, and an optional `any_of` list of conditions. A rule fires if the prediction's `class_id` appears in `disease_ids` and all `all_of` conditions evaluate to true. Fired rules produce weather guidance items with explicit rule IDs for traceability.
 
-**Figure 8 — Weather and Recommendation Pipeline**  
-![Figure 8](doc_assets/fig08_weather_recommendation_workflow.png)
+**Figure 12 — Weather and Recommendation Pipeline**  
+![Figure 12](doc_assets/fig08_weather_recommendation_workflow.png)
 
 ### 2.13 Weather Integration
 
@@ -594,8 +594,8 @@ The FastAPI backend exposes the following endpoints:
 
 **Lifespan management:** On startup, the `lifespan` context manager initialises the `WeatherService`, `KnowledgeBase`, `RecommendationEngine`, `PredictionWorkflow`, database engine, and session factory. Database connections are disposed on shutdown.
 
-**Figure 9 — Frontend–Backend Communication**  
-![Figure 9](doc_assets/fig09_frontend_backend_communication.png)
+**Figure 13 — Frontend–Backend Communication**  
+![Figure 13](doc_assets/fig09_frontend_backend_communication.png)
 
 ### 2.15 Database Schema and Persistence
 
@@ -623,8 +623,8 @@ CHECK constraints enforce non-blank class IDs, confidence in [0, 1], severity pe
 
 The schema is managed by two Alembic migrations (revisions `0001` and `0002`), which are applied non-destructively — the launcher verifies the database is at the head revision before starting the backend.
 
-**Figure 10 — Database Persistence Workflow**  
-![Figure 10](doc_assets/fig10_database_persistence_workflow.png)
+**Figure 14 — Database Persistence Workflow**  
+![Figure 14](doc_assets/fig10_database_persistence_workflow.png)
 
 ### 2.16 Frontend Application
 
@@ -646,39 +646,39 @@ The React 18 frontend is a single-page application built with Vite 8.3.1. It has
 
 The frontend is built with no component framework beyond React itself — no Material UI or Tailwind; styles are provided by a custom CSS file. This keeps the bundle small and the behaviour predictable. The production build passes Vite's bundle step without warnings and produces optimised assets in `frontend/dist/`.
 
-**Figure 9** (above) illustrates the communication pattern between the frontend and backend.
+**Figure 13** (above) illustrates the communication pattern between the frontend and backend.
 
 Figures 18 through 23 show the application as captured from a live session. The backend was serving inference on port 8000, and the React frontend was running on port 5173. A genuine PlantVillage tomato late blight image was uploaded for prediction.
 
-**Figure 18 — Application Dashboard and Crop Selector**  
-![Figure 18](doc_assets/screenshots/01_dashboard.png)
+**Figure 15 — Application Screenshot — Dashboard and Crop Selector**  
+![Figure 15](doc_assets/screenshots/01_dashboard.png)
 
-Figure 18 shows the main landing view. The sidebar navigation lists "Leaf analysis" and "Prediction history." The crop selector presents Tomato, Potato, and Grape as radio buttons. The drag-and-drop upload zone accepts JPEG, PNG, and WEBP images. A "WHAT YOU'LL RECEIVE" sidebar summarises the four output stages.
+Figure 15 shows the main landing view. The sidebar navigation lists "Leaf analysis" and "Prediction history." The crop selector presents Tomato, Potato, and Grape as radio buttons. The drag-and-drop upload zone accepts JPEG, PNG, and WEBP images. A "WHAT YOU'LL RECEIVE" sidebar summarises the four output stages.
 
-**Figure 19 — Leaf Image Upload with Preview**  
-![Figure 19](doc_assets/screenshots/02_image_upload.png)
+**Figure 16 — Application Screenshot — Leaf Image Upload**  
+![Figure 16](doc_assets/screenshots/02_image_upload.png)
 
-Figure 19 shows the upload form after a PlantVillage tomato late blight image has been selected. The leaf photograph preview is displayed in the upload zone, and the filename and file size are confirmed below.
+Figure 16 shows the upload form after a PlantVillage tomato late blight image has been selected. The leaf photograph preview is displayed in the upload zone, and the filename and file size are confirmed below.
 
-**Figure 20 — Prediction Results**  
-![Figure 20](doc_assets/screenshots/03_prediction_results.png)
+**Figure 17 — Application Screenshot — Prediction Results**  
+![Figure 17](doc_assets/screenshots/03_prediction_results.png)
 
-Figure 20 shows the state of the page after the prediction workflow has completed. The "ANALYSIS RESULT" banner appears with an "Analysis saved" status pill. The form fields (location input, lesion mask upload, "Analyze leaf" button) remain visible, with the result stack beginning below.
+Figure 17 shows the state of the page after the prediction workflow has completed. The "ANALYSIS RESULT" banner appears with an "Analysis saved" status pill. The form fields (location input, lesion mask upload, "Analyze leaf" button) remain visible, with the result stack beginning below.
 
-**Figure 21 — Grad-CAM Heatmap and Overlay**  
-![Figure 21](doc_assets/screenshots/04_gradcam_visualization.png)
+**Figure 18 — Application Screenshot — Grad-CAM Heatmap and Overlay**  
+![Figure 18](doc_assets/screenshots/04_gradcam_visualization.png)
 
-Figure 21 shows the Grad-CAM explainability section from the same prediction. The activation heatmap (jet colormap) highlights the leaf regions that most influenced the model's prediction, and the overlay blends the heatmap with the original leaf photograph at 42% alpha. The disclaimer — "Grad-CAM visualizes model activation; it does not prove biological cause" — is displayed below.
+Figure 18 shows the Grad-CAM explainability section from the same prediction. The activation heatmap (jet colormap) highlights the leaf regions that most influenced the model's prediction, and the overlay blends the heatmap with the original leaf photograph at 42% alpha. The disclaimer — "Grad-CAM visualizes model activation; it does not prove biological cause" — is displayed below.
 
-**Figure 22 — Disease Recommendations and Guidance**  
-![Figure 22](doc_assets/screenshots/05_disease_recommendations.png)
+**Figure 19 — Application Screenshot — Disease Recommendations**  
+![Figure 19](doc_assets/screenshots/05_disease_recommendations.png)
 
-Figure 22 shows the "General Guidance — Prevention and management" section. Six source-attributed guidance items (three prevention, three general management) are displayed, each linked to the knowledge-base entry for late blight of tomato and potato.
+Figure 19 shows the "General Guidance — Prevention and management" section. Six source-attributed guidance items (three prevention, three general management) are displayed, each linked to the knowledge-base entry for late blight of tomato and potato.
 
-**Figure 23 — Prediction History View**  
-![Figure 23](doc_assets/screenshots/06_prediction_history.png)
+**Figure 20 — Application Screenshot — Prediction History**  
+![Figure 20](doc_assets/screenshots/06_prediction_history.png)
 
-Figure 23 shows the prediction history table with ten saved records. Each row displays the prediction date, predicted class, confidence score, severity category (where available), weather status, and model version. Pagination controls are provided at the bottom, and a detail panel allows individual records to be expanded.
+Figure 20 shows the prediction history table with ten saved records. Each row displays the prediction date, predicted class, confidence score, severity category (where available), weather status, and model version. Pagination controls are provided at the bottom, and a detail panel allows individual records to be expanded.
 
 ### 2.17 Application Launcher
 
@@ -870,7 +870,7 @@ The tomato-potato classifier (run ID: `tomato-potato-2026-11-17-b`) was evaluate
 | potato_early_blight | Very high | Very high | Very high |
 | potato_late_blight | Very high | Very high | Very high |
 
-*(Per-class breakdown is visualised in Figure 15.)*
+*(Per-class breakdown is visualised in Figure 23.)*
 
 **Misclassifications (4 total):**
 
@@ -882,8 +882,8 @@ The tomato-potato classifier (run ID: `tomato-potato-2026-11-17-b`) was evaluate
 
 The pattern of confusions is clinically plausible. Early blight (*Alternaria solani*) and late blight (*Phytophthora infestans*) produce superficially similar dark necrotic lesions, particularly in early-stage infections. Distinguishing them in controlled PlantVillage photographs is already a subtle task; the model's confusion rate of 3 misclassifications between these two classes out of 1,317 images is very low.
 
-**Figure 11 — Tomato–Potato Confusion Matrix**  
-![Figure 11](doc_assets/fig11_tomato_potato_cm.png)
+**Figure 21 — Tomato–Potato Confusion Matrix (Test Set, 1,317 Samples)**  
+![Figure 21](doc_assets/fig11_tomato_potato_cm.png)
 
 ### 4.2 Classification Results — Grape Model
 
@@ -913,8 +913,8 @@ The grape classifier (run ID: `grape-2026-11-17-a`) was evaluated on 544 held-ou
 
 Grape black rot and Esca (Black Measles) are known to produce similar dark lesion patterns on leaves. The 4 misclassifications across 544 test samples represent a very low error rate, and all confusions occur between visually related disease classes, not between unrelated ones.
 
-**Figure 12 — Grape Confusion Matrix**  
-![Figure 12](doc_assets/fig12_grape_cm.png)
+**Figure 22 — Grape Confusion Matrix (Test Set, 544 Samples)**  
+![Figure 22](doc_assets/fig12_grape_cm.png)
 
 ### 4.3 Training Dynamics
 
@@ -922,23 +922,23 @@ The tomato-potato model reached peak validation performance at epoch 11, after w
 
 The grape model reached peak performance at epoch 1, with performance remaining high through epoch 6 before early stopping triggered. This fast convergence reflects the relative simplicity of the 3-class grape problem and the strong feature representations provided by ImageNet pretrained weights.
 
-**Figure 13 — Tomato–Potato Training Curves** (above)  
-**Figure 14 — Grape Training Curves** (above)
+**Figure 4 — Tomato–Potato Training and Validation Curves** (above)  
+**Figure 5 — Grape Training and Validation Curves** (above)
 
 ### 4.4 Per-Class Metric Visualisation
 
-**Figure 15 — Per-Class Precision, Recall, and F1 Scores**  
-![Figure 15](doc_assets/fig15_per_class_metrics.png)
+**Figure 23 — Per-Class Precision, Recall, and F1 Scores**  
+![Figure 23](doc_assets/fig15_per_class_metrics.png)
 
 All classes across both models maintain precision, recall, and F1 scores above 98%, with most classes scoring above 99.5%. The lowest-scoring classes correspond to those involved in confusion pairs identified in Sections 4.1 and 4.2.
 
 ### 4.5 Grad-CAM Qualitative Results
 
-Grad-CAM overlays were computed for a sample of grape leaf images from the GVLiD-v5 dataset. Figure 16 shows the original image, the Grad-CAM heatmap, and the blended overlay for each sample.
+Grad-CAM overlays were computed for a sample of grape leaf images from the GVLiD-v5 dataset. Figure 9 shows the original image, the Grad-CAM heatmap, and the blended overlay for each sample.
 
 In the grape black rot samples, the heat activation is concentrated on the dark, circular lesion regions on the leaf surface. In the Esca samples, activation spreads along the interveinal discolouration pattern. This qualitative inspection suggests the model is attending to diagnostically relevant tissue rather than background artefacts — though formal human evaluation against expert annotations was not conducted.
 
-**Figure 16 — Grad-CAM Overlay Samples** (above)
+**Figure 9 — Grad-CAM Overlay Samples (Grape Leaf Images)** (above)
 
 ### 4.6 Severity Estimation
 
@@ -950,7 +950,7 @@ Limitations of the current implementation:
 - The severity estimate requires a precisely aligned pixel mask; if the mask dimensions do not match the image after EXIF correction, the endpoint returns a 422 error.
 - The HSV closing kernel and minimum component size are configurable but require manual tuning per crop type.
 
-**Figure 17 — Severity Estimation Demo** (above)
+**Figure 11 — Severity Estimation Demo (Annotated Lesion Mask)** (above)
 
 ### 4.7 Test Suite Results
 
